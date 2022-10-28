@@ -1,4 +1,4 @@
-package ndr_masters;
+package intellectual_systems.job1;
 
 import utility.MathUtils;
 

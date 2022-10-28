@@ -1,4 +1,4 @@
-package ndr_masters;
+package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Tag;
@@ -11,22 +11,23 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-public class SquareRecursiveCalculatorTests {
+public class StringReverserTests {
 
     public static Stream<Arguments> testArguments() {
         return Stream.of(
-                Arguments.of(2, 1.9615705608064609),
-                Arguments.of(1, 1.8477590650225735),
-                Arguments.of(0, 1.4142135623730951)
+                Arguments.of("abc", "cba"),
+                Arguments.of("check", "kcehc"),
+                Arguments.of("lol", "lol")
         );
     }
 
     @ParameterizedTest
     @MethodSource("testArguments")
     @Tag("Demonstration")
-    public void demonstrateTask4(int x, double expected) {
-        log.info("Task #4. Testing value: {}, Expected: {}", x, expected);
-        var actual = SquareRecursiveCalculator.calculate(x);
+    public void demonstrateTask8(String source, String expected) {
+        log.info("Task #8");
+        var actual = StringReverser.reverse(source);
+        log.info("Source string: {}, Actual: {}, Expected: {}", source, actual, expected);
         assertThat(actual).isEqualTo(expected);
     }
 }
