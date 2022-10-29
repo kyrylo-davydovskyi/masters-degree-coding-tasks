@@ -50,4 +50,23 @@ public class CombinationsTest {
 
         log.info("Unique Options[{}], Required[{}], Combinations[{}]", uniqueOptions, requiredNumber, result);
     }
+
+
+    public static Stream<Arguments> task3ArgumentSource() {
+        return Stream.of(
+                Arguments.of(20, 3)
+        );
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("task3ArgumentSource")
+    @Tag("Demonstration")
+    public void task3(int totalFactors,
+                      int possibleOptionsCount) {
+        var result = CombinationCalculator.getCombinationWithoutRepeats(totalFactors, possibleOptionsCount);
+
+
+        log.info("Number of students[{}], Possible marks count[{}], Combinations[{}]", totalFactors, possibleOptionsCount, result);
+    }
 }
