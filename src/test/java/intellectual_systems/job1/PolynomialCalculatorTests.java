@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-public class PolinomCalculatorTests {
+public class PolynomialCalculatorTests {
 
     public static Stream<Arguments> testArguments() {
         return Stream.of(
@@ -27,10 +27,10 @@ public class PolinomCalculatorTests {
     @MethodSource("testArguments")
     public void demonstrateTask4(int x, int expected) {
         log.info("Task #4");
-        var executor = new PolinomCalculator();
+        var executor = new PolynomialCalculator();
         var actual = executor.calculate(x);
         var template = "2*%s^4 - 7*%s^3 + 3*%s^2 + 2*%s -5".replace("%s", String.valueOf(x));
-        log.info("Polinom: {} = {}. Expected result: {}", template, actual, expected);
+        log.info("Polynomial: {} = {}. Expected result: {}", template, actual, expected);
 
         assertThat(actual).isEqualTo(expected);
     }

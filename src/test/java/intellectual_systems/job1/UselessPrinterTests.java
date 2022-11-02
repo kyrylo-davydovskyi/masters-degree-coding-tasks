@@ -27,7 +27,7 @@ public class UselessPrinterTests {
     @ParameterizedTest
     @MethodSource("testArguments")
     @Disabled
-    public void demostrateTask6(int x) {
+    public void demonstrateTask6(int x) {
         log.info("Task #6");
         var executor = new UselessPrinter();
         executor.task6(x);

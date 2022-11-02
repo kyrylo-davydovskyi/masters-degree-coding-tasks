@@ -16,7 +16,7 @@ public class UserService {
                                        String dateRangeEnd,
                                        BioRhythmsAbstractCalculator calculator) {
         log.info("Performing {} analyze of user with name={} and dateOfBirth={}", measureName, user.getName(), user.getDateOfBirth());
-        log.info("Analyzing daterange from={}, to={}", dateRangeStart, dateRangeEnd);
+        log.info("Analyzing date range from={}, to={}", dateRangeStart, dateRangeEnd);
 
         var result = calculator.calculate(user.getDateOfBirth(), dateRangeStart, dateRangeEnd);
         log.info("Chart for {}: \n {}", user.getName(), result);

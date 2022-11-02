@@ -23,7 +23,6 @@ public abstract class BioRhythmsAbstractCalculator {
     }
 
     public double calculate(String dateOfBirth, String dateToCalculate) {
-
         var x = getDaysUntilToday(dateOfBirth, dateToCalculate);
         return Math.sin(
                 (2 * x * Math.PI) / divider
@@ -31,7 +30,6 @@ public abstract class BioRhythmsAbstractCalculator {
     }
 
     public Map<String, Double> calculate(String dateOfBirth, String dateToCalculateFrom, String dateToCalculateTo) {
-
         var result = new HashMap<String, Double>();
 
         var startDate = LocalDate.parse(dateToCalculateFrom, formatter);

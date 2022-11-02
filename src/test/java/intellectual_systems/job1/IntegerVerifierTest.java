@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 
 
 @Slf4j
-public class IntegerVerificatorTest {
+public class IntegerVerifierTest {
 
-    private final IntegerVerificator executor = new IntegerVerificator();
+    private final IntegerVerifier executor = new IntegerVerifier();
 
 
     @Test

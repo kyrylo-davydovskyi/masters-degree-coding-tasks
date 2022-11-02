@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-public class BioRhytmsCalculatorTests {
+public class BioRhythmsCalculatorTests {
 
 
     public static Stream<Arguments> dataArgs() {

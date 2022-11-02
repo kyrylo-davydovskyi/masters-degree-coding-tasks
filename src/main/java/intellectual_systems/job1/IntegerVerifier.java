@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class IntegerVerificator {
+public class IntegerVerifier {
 
     //Count numbers which is not divided on all args.
     public int task9(int from, int to, int... notDividedOn) {
