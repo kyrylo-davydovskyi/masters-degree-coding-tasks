@@ -1,7 +1,7 @@
 package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -26,7 +26,7 @@ public class UselessPrinterTests {
 
     @ParameterizedTest
     @MethodSource("testArguments")
-    @Tag("Demonstration")
+    @Disabled
     public void demostrateTask6(int x) {
         log.info("Task #6");
         var executor = new UselessPrinter();

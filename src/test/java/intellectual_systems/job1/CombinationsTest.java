@@ -1,7 +1,7 @@
 package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -21,7 +21,7 @@ public class CombinationsTest {
 
     @ParameterizedTest
     @MethodSource("task1ArgumentSource")
-    @Tag("Demonstration")
+    @Disabled
     public void task1(int totalBoys,
                       int totalGirls,
                       int requiredBoys,
@@ -43,7 +43,7 @@ public class CombinationsTest {
 
     @ParameterizedTest
     @MethodSource("task2ArgumentSource")
-    @Tag("Demonstration")
+    @Disabled
     public void task2(int uniqueOptions,
                       int requiredNumber) {
         var result = CombinationCalculator.getCombinationWithRepeats(uniqueOptions, requiredNumber);
@@ -61,7 +61,7 @@ public class CombinationsTest {
 
     @ParameterizedTest
     @MethodSource("task3ArgumentSource")
-    @Tag("Demonstration")
+    @Disabled
     public void task3(int totalFactors,
                       int possibleOptionsCount) {
         var result = CombinationCalculator.getCombinationWithoutRepeats(totalFactors, possibleOptionsCount);

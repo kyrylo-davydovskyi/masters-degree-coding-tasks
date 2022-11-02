@@ -1,7 +1,6 @@
 package ndr_masters;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -26,7 +25,6 @@ public class LevenshteinDistanceTests {
 
     @ParameterizedTest
     @MethodSource("testArguments")
-    @Tag("Demonstration")
     public void levenshteinDistanceTests(String line1,
                                          String line2,
                                          int expected) {

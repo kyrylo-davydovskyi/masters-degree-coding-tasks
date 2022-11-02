@@ -1,7 +1,6 @@
 package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -33,7 +32,6 @@ public class ExponentialDoubleFormatterTests {
 
     @ParameterizedTest
     @MethodSource("task1ArgumentSource")
-    @Tag("Demonstration")
     public void task1(double source,
                       String expected) {
         var actual = ExponentialDoubleFormatter.format(source);

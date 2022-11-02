@@ -1,7 +1,6 @@
 package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,7 +22,6 @@ public class SquareRecursiveCalculatorTests {
 
     @ParameterizedTest
     @MethodSource("testArguments")
-    @Tag("Demonstration")
     public void demonstrateTask4(int x, double expected) {
         log.info("Task #4. Testing value: {}, Expected: {}", x, expected);
         var actual = SquareRecursiveCalculator.calculate(x);

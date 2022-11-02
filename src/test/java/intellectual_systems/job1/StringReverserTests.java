@@ -1,7 +1,6 @@
 package intellectual_systems.job1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,7 +22,6 @@ public class StringReverserTests {
 
     @ParameterizedTest
     @MethodSource("testArguments")
-    @Tag("Demonstration")
     public void demonstrateTask8(String source, String expected) {
         log.info("Task #8");
         var actual = StringReverser.reverse(source);
