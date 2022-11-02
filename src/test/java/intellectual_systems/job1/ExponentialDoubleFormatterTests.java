@@ -14,17 +14,17 @@ public class ExponentialDoubleFormatterTests {
 
     public static Stream<Arguments> task1ArgumentSource() {
         return Stream.of(
-                Arguments.of(0.99999999999, "1.0Е0"),
-                Arguments.of(-90.999999999, "-9.1Е1"),
-                Arguments.of(90.99999999999, "9.1Е1"),
-                Arguments.of(-0.000031475926, "-3.1Е-5"),
-                Arguments.of(-37710.99999999999, "-3.8Е4"),
-                Arguments.of(-3771099, "-3.8Е6"),
-                Arguments.of(-4133.3333, "-4.1Е3"),
-                Arguments.of(-99.99999999999, "-1.0Е2"),
-                Arguments.of(-99999.99999999999, "-1.0Е5"),
-                Arguments.of(-99999, "-1.0Е5"),
-                Arguments.of(99999, "1.0Е5")
+                Arguments.of(0.99999999999, "1.0E0"),
+                Arguments.of(-90.999999999, "-9.1E1"),
+                Arguments.of(90.99999999999, "9.1E1"),
+                Arguments.of(-0.000031475926, "-3.1E-5"),
+                Arguments.of(-37710.99999999999, "-3.8E4"),
+                Arguments.of(-3771099, "-3.8E6"),
+                Arguments.of(-4133.3333, "-4.1E3"),
+                Arguments.of(-99.99999999999, "-1.0E2"),
+                Arguments.of(-99999.99999999999, "-1.0E5"),
+                Arguments.of(-99999, "-1.0E5"),
+                Arguments.of(99999, "1.0E5")
 
         );
     }
