@@ -6,9 +6,16 @@
 
 <groupId>com.davydovskyi.study</groupId>
 <artifactId>MastersDegreeCodingTasks</artifactId>
-<version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>data_mining</module>
+        <module>ndr_masters</module>
+        <module>intellectual_systems</module>
+        <module>common</module>
+    </modules>
 
-<properties>
+    <properties>
   <maven.compiler.source>11</maven.compiler.source>
   <maven.compiler.target>11</maven.compiler.target>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
