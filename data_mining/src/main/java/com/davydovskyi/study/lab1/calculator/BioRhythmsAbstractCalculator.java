@@ -1,5 +1,7 @@
 package com.davydovskyi.study.lab1.calculator;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -10,16 +12,20 @@ public abstract class BioRhythmsAbstractCalculator {
 
     private final DateTimeFormatter formatter;
     private final int divider;
+    private final String name;
 
     protected BioRhythmsAbstractCalculator(DateTimeFormatter formatter,
-                                           int divider) {
+                                           int divider,
+                                           String name) {
         this.formatter = formatter;
         this.divider = divider;
+        this.name = name;
     }
 
-    protected BioRhythmsAbstractCalculator(int divider) {
+    protected BioRhythmsAbstractCalculator(int divider, String name) {
         this.formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.divider = divider;
+        this.name = name;
     }
 
     public double calculate(String dateOfBirth, String dateToCalculate) {
@@ -37,14 +43,19 @@ public abstract class BioRhythmsAbstractCalculator {
 
         for (LocalDate date = startDate; date.isBefore(endDate); date = date.plusDays(1)) {
             var x = getDaysUntilToday(dateOfBirth, date.format(formatter));
+            var calc = Math.sin(
+                    (2 * x * Math.PI) / divider
+            );
+            var rounded = new BigDecimal(Double.toString(calc));
             result.put(
                     date,
-                    Math.sin(
-                            (2 * x * Math.PI) / divider
-                    ));
+                    rounded.setScale(8, RoundingMode.DOWN).doubleValue());
         }
         return result;
+    }
 
+    public String getName() {
+        return name;
     }
 
     private long getDaysUntilToday(String dateOfBirth, String dateToCalculate) {

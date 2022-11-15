@@ -6,10 +6,10 @@ public class PhysicalRhythmsCalculator extends BioRhythmsAbstractCalculator {
     public static final int PHYSICAL_LENGTH = 22;
 
     public PhysicalRhythmsCalculator(DateTimeFormatter formatter) {
-        super(formatter, PHYSICAL_LENGTH);
+        super(formatter, PHYSICAL_LENGTH, "Physical");
     }
 
     public PhysicalRhythmsCalculator() {
-        super(PHYSICAL_LENGTH);
+        super(PHYSICAL_LENGTH, "Physical");
     }
 }

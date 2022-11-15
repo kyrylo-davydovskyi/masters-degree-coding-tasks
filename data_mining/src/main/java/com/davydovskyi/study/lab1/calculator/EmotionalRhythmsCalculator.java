@@ -6,10 +6,10 @@ public class EmotionalRhythmsCalculator extends BioRhythmsAbstractCalculator {
     public static final int EMOTIONAL_LENGTH = 27;
 
     public EmotionalRhythmsCalculator(DateTimeFormatter formatter) {
-        super(formatter, EMOTIONAL_LENGTH);
+        super(formatter, EMOTIONAL_LENGTH, "Emotional");
     }
 
     public EmotionalRhythmsCalculator() {
-        super( EMOTIONAL_LENGTH);
+        super(EMOTIONAL_LENGTH, "Emotional");
     }
 }
