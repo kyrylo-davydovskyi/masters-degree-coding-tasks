@@ -1,12 +1,12 @@
 package com.davydovskyi.study.lab2.service;
 
 
-import com.davydovskyi.study.lab2.calculator.DeathCalculator;
-import com.davydovskyi.study.lab2.calculator.GompertzDeathCalculator;
-import com.davydovskyi.study.lab2.calculator.MoivreDeathCalculator;
+import com.davydovskyi.study.lab2.calculator.CanCalculate;
+import com.davydovskyi.study.lab2.calculator.GompertzCalculator;
+import com.davydovskyi.study.lab2.calculator.MoivreCalculator;
 import com.davydovskyi.study.lab2.dto.StatisticDeathItem;
+import com.davydovskyi.study.lab2.util.ChartDisplayer;
 import com.davydovskyi.study.lab2.util.CsvPrinter;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,26 +22,35 @@ public class DeathController {
     private static final BigDecimal maxAge = BigDecimal.valueOf(100);
 
     @SneakyThrows
-    public static List<StatisticDeathItem> calculateGompertz(Double a, Double b, Integer totalPopulation, Double percentCoef) {
-        return process(new GompertzDeathCalculator(BigDecimal.valueOf(a), BigDecimal.valueOf(b), maxAge),
-                "GomperzDeath calc by Davydovskyi",
+    public static void calculateGompertz(Double a, Double b, Integer totalPopulation, Double percentCoef) {
+        log.info("Performing calculations with args a[{}], b[{}], norm percent[{}], totalPopulation[{}], maxAge[{}]", a, b, percentCoef, totalPopulation, maxAge);
+
+        var result = process(new GompertzCalculator(BigDecimal.valueOf(a), BigDecimal.valueOf(b), maxAge),
                 totalPopulation,
                 percentCoef);
+
+        var fileName = String.format("Gompertz_%s_%s_%s_%s", totalPopulation, a, b, percentCoef);
+        log.info("Writing information to {}", fileName);
+        CsvPrinter.createCsvReport(fileName, result);
+        ChartDisplayer.display(result, "Gompertz Approach");
     }
 
     @SneakyThrows
-    public static List<StatisticDeathItem> calculateMoivre(Integer totalPopulation, Double percentCoef) {
-        return process(new MoivreDeathCalculator(maxAge),
-                "Moivre calc by Davydovskyi",
+    public static void calculateMoivre(Integer totalPopulation, Double percentCoef) {
+        log.info("Performing calculations with args norm percent[{}], totalPopulation[{}], maxAge[{}]", percentCoef, totalPopulation, maxAge);
+        var result = process(new MoivreCalculator(maxAge),
                 totalPopulation,
                 percentCoef);
+        var fileName = String.format("Moivre_%s_%s", totalPopulation, percentCoef);
+        log.info("Writing information to {}", fileName);
+        CsvPrinter.createCsvReport(fileName, result);
+        ChartDisplayer.display(result, "Moivre Approach");
     }
 
     @SneakyThrows
-    private static List<StatisticDeathItem> process(DeathCalculator calculator,
-                                String chartName,
-                                Integer totalPopulation,
-                                Double percentCoef) {
+    private static List<StatisticDeathItem> process(CanCalculate calculator,
+                                                    Integer totalPopulation,
+                                                    Double percentCoef) {
         var coefficients = calculator.calculate();
         var resultList = new ArrayList<StatisticDeathItem>();
         for (Map.Entry<Integer, Double> entry : coefficients.entrySet()) {

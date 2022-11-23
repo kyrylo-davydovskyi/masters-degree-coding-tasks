@@ -11,13 +11,14 @@ import java.util.stream.IntStream;
 
 @AllArgsConstructor
 @Slf4j
-public class MoivreDeathCalculator implements DeathCalculator {
+public class MoivreCalculator implements CanCalculate {
 
     private BigDecimal maxAge;
 
 
     @Override
     public Map<Integer, Double> calculate() {
+        log.info("Performing calculations with arg maxAge[{}]", maxAge);
         var resultMap = new HashMap<Integer, Double>();
 
         IntStream.rangeClosed(1, maxAge.intValue())
