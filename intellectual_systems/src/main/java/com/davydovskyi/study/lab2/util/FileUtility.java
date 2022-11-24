@@ -1,7 +1,6 @@
 package com.davydovskyi.study.lab2.util;
 
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,7 +10,6 @@ import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Collectors;
 
-@Slf4j
 public class FileUtility {
 
     @SneakyThrows

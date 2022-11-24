@@ -1,10 +1,7 @@
 package com.davydovskyi.study.lab2.service;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.*;
 
-@Slf4j
 public class DemucronService {
 
     public static Map<Integer, List<Integer>> sortGraph(int size, int[][] graphArray) {
@@ -17,12 +14,15 @@ public class DemucronService {
 
             for (int node = 0; node < size; node++) {
                 if (alreadySorted.contains(node)) continue;
+
                 var rowSum = 0;
+
                 for (int subNode = 0; subNode < size; subNode++) {
                     if (!alreadySorted.contains(subNode)) {
                         rowSum += graphArray[node][subNode];
                     }
                 }
+
                 if (rowSum == 0) {
                     tempSorted.add(node);
                     var result = Optional.ofNullable(resultMap.get(iteration)).orElse(new ArrayList<>());
