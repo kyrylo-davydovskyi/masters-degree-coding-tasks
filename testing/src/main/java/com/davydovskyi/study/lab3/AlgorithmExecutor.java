@@ -84,7 +84,7 @@ public class AlgorithmExecutor {
         var z = new AtomicInteger(1);
 
         IntStream.rangeClosed(1, n).forEach(i ->
-                z.set(z.get() * i)
+                z.set(z.get() * x)
         );
 
         return z.get();
