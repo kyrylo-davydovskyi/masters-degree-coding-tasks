@@ -26,8 +26,7 @@ public class FileUtility {
         var array = new int[queue.size()][queue.size()];
         var iter = 0;
         for (List<Integer> element : queue) {
-            var temp = element.stream().mapToInt(i -> i).toArray();
-            array[iter] = temp;
+            array[iter] = element.stream().mapToInt(i -> i).toArray();
             iter++;
         }
         return array;
