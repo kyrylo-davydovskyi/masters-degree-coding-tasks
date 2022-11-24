@@ -9,10 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+      <module>common</module>
         <module>data_mining</module>
         <module>ndr_masters</module>
         <module>intellectual_systems</module>
-        <module>common</module>
+        <module>testing</module>
     </modules>
 
     <properties>
