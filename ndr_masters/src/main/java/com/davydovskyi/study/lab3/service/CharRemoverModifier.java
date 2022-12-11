@@ -1,4 +1,4 @@
-package com.davydovskyi.study.lab2.service;
+package com.davydovskyi.study.lab3.service;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.davydovskyi.study.lab2;
+package com.davydovskyi.study.lab3;
 
-import com.davydovskyi.study.lab2.service.*;
+import com.davydovskyi.study.lab3.service.*;
 import com.davydovskyi.study.utility.ConsoleUtil;
 import com.davydovskyi.study.utility.FileUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,6 @@ public class TypoMakerProgram {
             new CharInserterModifier(),
             new CharRemoverModifier()
     );
-
 
     public static void main(String[] args) {
 
